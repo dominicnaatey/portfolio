@@ -1,10 +1,16 @@
-$primary-color: #444;
-$secondary-color: #FF8C00;
-* {}
+@import 'config';
+* {
+    box-sizing: border-box;
+}
 
 body {
+    @include background;
     background: $primary-color;
     color: #fff;
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
 }
 
 //Headings
@@ -46,8 +52,15 @@ main {
         a {
             padding: 0.4rem;
             &:hover {
-                color: $secondary-color
+                color: $secondary-color;
+                @include easOut();
             }
+        }
+    }
+    &#home {
+        overflow: hidden;
+        h1 {
+            margin-top: 20vh;
         }
     }
 }
